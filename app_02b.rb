@@ -34,11 +34,11 @@ def menu(player1, player2, player3)
   puts "\n\n"
   puts "Attaquer une vache en vue :"
   puts "---------------------------"
-  if player2.life_points > 1
-    puts "0 - pour attaquer Hector the bull qui à #{player2.life_points} points de vie"
+  if player2.hit_points > 1
+    puts "0 - pour attaquer Hector the bull qui à #{player2.hit_points} points de vie"
   end
-  if player3.life_points > 1
-    puts "1 - pour attaquer Dolly the cow qui à #{player3.life_points} points de vie"
+  if player3.hit_points > 1
+    puts "1 - pour attaquer Dolly the cow qui à #{player3.hit_points} points de vie"
   end
 
   puts "\n\n"
@@ -59,20 +59,20 @@ def menu(player1, player2, player3)
       puts "You're enemies benefit from your indecision!"
     end
   end
-    while player1.life_points > 0 && (player2.life_points > 0 || player3.life_points > 0)
+    while player1.hit_points > 0 && (player2.hit_points > 0 || player3.hit_points > 0)
       menu(player1, player2, player3)
     puts "Here they come!"
       enemies.each do |enemy|
-        if enemy.life_points > 0
+        if enemy.hit_points > 0
           enemy.attacks(player1)
         end
       end
     end
 puts "La partie est finie"
-  if player1.life_points > 0
+  if player1.hit_points > 0
     puts "You're a real cowboy YEEEEHAAAAAA ! "
   else
-    puts "#{player1.name} has 0 life points remaining."
+    puts "#{player1.name} has 0 HP remaining."
     puts "you have lost, looooser!"
   end
   
