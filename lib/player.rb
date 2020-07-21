@@ -3,7 +3,7 @@ class Player
 
   @hit_points = 10
 
-  def initialize(player_name)
+  def initialize(player_name) 
     @name = player_name
     @hit_points = 10
   end
